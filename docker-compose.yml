@@ -3,7 +3,7 @@ version: "3.8"
 services:
   app:
     env_file: .env
-    image: gestion_recette_api
+    image: gestion_api_RESTful
     container_name: gestion_api
     build: .
     ports:
@@ -13,10 +13,9 @@ services:
     depends_on:
       - db
 
-
   db:
     image: mysql
-    container_name: mysql
+    container_name: mysql_bd
     env_file: .env
     restart: always
     environment:

@@ -1,6 +1,10 @@
 import db from "../config/database.js";
 
 class RecetteService {
+  static async checkRecipe(titre) {
+    const [rows] = await db.query('SELECT COUNT(*) AS count FROM recettes WHERE titre = ?', [titre]);
+    return rows[0].count;
+}
   static async getAllRecettes() {
     try {
       const [rows] = await db.query("SELECT * FROM recettes");
@@ -21,11 +25,11 @@ class RecetteService {
       throw error;
     }
   }
-  static async createRecette(titre, ingredient, type) {
+  static async createRecette(titre, ingredients, type) {
     try {
       const [result] = await db.query(
-        "INSERT INTO recettes (titre, ingredient, type) VALUES (?, ?, ?)",
-        [titre, ingredient, type],
+        "INSERT INTO recettes (titre, ingredients, type) VALUES (?, ?, ?)",
+        [titre, ingredients, type],
       );
       return result.insertId;
     } catch (error) {
@@ -33,11 +37,11 @@ class RecetteService {
       throw error;
     }
   }
-  static async updateRecette(id, titre, ingredient, type) {
+  static async updateRecette(id, titre, ingredients, type) {
     try {
       const [result] = await db.query(
-        "UPDATE recettes SET titre = ?, ingredient = ?, type = ? WHERE id = ?",
-        [titre, ingredient, type, id],
+        "UPDATE recettes SET titre = ?, ingredients = ?, type = ? WHERE id = ?",
+        [titre, ingredients, type, id],
       );
       return result.affectedRows;
     } catch (error) {

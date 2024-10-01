@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ehya-Ag/gestion-recettes-API.git.git"
+    "url": "git+https://github.com/Ehya-Ag/Gestion_API_RESTful.git.git"
   },
   "author": "Ehya-Ag",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ehya-Ag/gestion-recettes-API.git/issues"
+    "url": "https://github.com/Ehya-Ag/Gestion_API_RESTful.git/issues"
   },
-  "homepage": "https://github.com/Ehya-Ag/gestion-recettes-API.git#readme",
+  "homepage": "https://github.com/Ehya-Ag/Gestion_API_RESTful.git#readme",
   "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
@@ -28,7 +28,6 @@
     "express": "^4.21.0",
     "express-validator": "^7.2.0",
     "http-status-codes": "^2.3.0",
-    "mysql": "^2.18.1",
     "mysql2": "^3.11.3",
     "nodemon": "^3.1.4"
   },

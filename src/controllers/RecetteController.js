@@ -24,10 +24,10 @@ class RecetteController {
 
   static async createRecette(req, res, next) {
     console.log("bonjour");
-    const { titre, ingredient, type } = req.body;
+    const { titre, ingredients, type } = req.body;
     try {
-      const id = await RecetteService.createRecette(titre, ingredient, type);
-      res.status(201).json({ id, titre, ingredient, type });
+      const id = await RecetteService.createRecette(titre, ingredients, type);
+      res.status(201).json({ id, titre, ingredients, type });
     } catch (error) {
       next(error);
     }
@@ -35,12 +35,12 @@ class RecetteController {
 
   static async updateRecette(req, res, next) {
     const { id } = req.params;
-    const { titre, ingredient, type } = req.body;
+    const { titre, ingredients, type } = req.body;
     try {
       const affectedRows = await RecetteService.updateRecette(
         id,
         titre,
-        ingredient,
+        ingredients,
         type,
       );
       if (affectedRows === 0) {
