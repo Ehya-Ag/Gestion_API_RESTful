@@ -17,6 +17,12 @@ class RecetteService {
       throw error;
     }
   }
+  static async getRecipeByTitle(titre) {
+    const [rows] = await db.query("SELECT * FROM recettes WHERE titre = ?", [
+      titre,
+    ]);
+    return rows.length ? rows[0] : null;
+  }
   static async getRecetteById(id) {
     try {
       const [rows] = await db.query("SELECT * FROM recettes WHERE id = ?", [

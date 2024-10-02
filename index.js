@@ -3,7 +3,7 @@ import router from "./src/routes/recetteRoutes.js";
 import bodyParser from "body-parser";
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.DB_PORT;
 
 app.use(bodyParser.json());
 app.use(router);

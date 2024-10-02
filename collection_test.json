@@ -1,0 +1,206 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-10-02T02:23:16.261Z",
+  "__export_source": "insomnia.desktop.app:v9.3.3",
+  "resources": [
+    {
+      "_id": "req_1504f08ec4ee4efcab27479bb64f0da0",
+      "parentId": "wrk_e1fe07b9a7d44755b8bd8cebf0ab8bba",
+      "modified": 1727796025490,
+      "created": 1727088361595,
+      "url": "localhost:3000/recettes/9",
+      "name": "DELETE RECETTE",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "User-Agent", "value": "insomnia/9.3.3" }],
+      "authentication": {},
+      "metaSortKey": -1727088361595,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_e1fe07b9a7d44755b8bd8cebf0ab8bba",
+      "parentId": null,
+      "modified": 1726224204923,
+      "created": 1726224204923,
+      "name": "Gestion Recette",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_a3ea853a9563497c96deb8a6d05503c1",
+      "parentId": "wrk_e1fe07b9a7d44755b8bd8cebf0ab8bba",
+      "modified": 1727833510232,
+      "created": 1727088310231,
+      "url": "localhost:3000/recettes/1",
+      "name": "GET  BY ID RECETTE",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": "\t{\n\t\t\"nom\": \"test\"\n\t}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "User-Agent", "value": "insomnia/9.3.3" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1727088310231,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8428780263464bceaddc081d25688758",
+      "parentId": "wrk_e1fe07b9a7d44755b8bd8cebf0ab8bba",
+      "modified": 1727835135210,
+      "created": 1726224703908,
+      "url": "localhost:3000/recettes/2",
+      "name": "PUT RECETTE",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n    \"titre\": \"test test\",\n    \"ingredients\": \"Pommes, sucre\",\n    \"type\": \"entrée\"\n}\n"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "User-Agent", "value": "insomnia/9.3.3" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726224703908,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_68c00dab83494fa6bfc14a5ccd29e2fc",
+      "parentId": "wrk_e1fe07b9a7d44755b8bd8cebf0ab8bba",
+      "modified": 1727796460264,
+      "created": 1726224653079,
+      "url": "localhost:3000/recettes/",
+      "name": "POST RECETTE",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n    \"titre\": \"Gateau sucré\",\n    \"ingredients\": \"Pommes, sucre\",\n    \"type\": \"POP\"\n}\n"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "User-Agent", "value": "insomnia/9.3.3" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726224653079,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8c3f36f2ee044fe793c78d47f38496c3",
+      "parentId": "wrk_e1fe07b9a7d44755b8bd8cebf0ab8bba",
+      "modified": 1727833858934,
+      "created": 1726224291764,
+      "url": "localhost:3000/recettes/",
+      "name": "GET RECETTE",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "id": "pair_2679d1756edd4eb88ffe1b0c375d4a63",
+            "name": "titre",
+            "value": "tout",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "id": "pair_52755eca7f984d2cbaa2d437f5eb4c7e",
+            "name": "ingredient",
+            "value": "rien",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "id": "pair_830280391faa475493be7e3dde54ccd9",
+            "name": "type",
+            "value": "tout",
+            "description": "",
+            "disabled": false
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "multipart/form-data" },
+        { "name": "User-Agent", "value": "insomnia/9.3.3" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1726224291764,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_93409cc16d9706e8ae227ff2a5c10d7787d8bf22",
+      "parentId": "wrk_e1fe07b9a7d44755b8bd8cebf0ab8bba",
+      "modified": 1726224204932,
+      "created": 1726224204932,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1726224204932,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_93409cc16d9706e8ae227ff2a5c10d7787d8bf22",
+      "parentId": "wrk_e1fe07b9a7d44755b8bd8cebf0ab8bba",
+      "modified": 1726224204934,
+      "created": 1726224204934,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
