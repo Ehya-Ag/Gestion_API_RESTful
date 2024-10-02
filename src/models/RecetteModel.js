@@ -2,9 +2,12 @@ import db from "../config/database.js";
 
 class RecetteService {
   static async checkRecipe(titre) {
-    const [rows] = await db.query('SELECT COUNT(*) AS count FROM recettes WHERE titre = ?', [titre]);
+    const [rows] = await db.query(
+      "SELECT COUNT(*) AS count FROM recettes WHERE titre = ?",
+      [titre],
+    );
     return rows[0].count;
-}
+  }
   static async getAllRecettes() {
     try {
       const [rows] = await db.query("SELECT * FROM recettes");

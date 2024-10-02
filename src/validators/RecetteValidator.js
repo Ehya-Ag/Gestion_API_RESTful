@@ -26,6 +26,13 @@ const addRequestValidator = [
     .bail()
     .isLength({ min: 10, max: 500 })
     .withMessage("Les ingrédients doivent comporter entre 10 et 500 caractères."),
+  check("type")
+    .not()
+    .isEmpty()
+    .withMessage("Le type de recette est obligatoire!")
+    .bail()
+    .isIn(['entrée', 'plat', 'dessert'])
+    .withMessage("Le type de recette doit être l'une des valeurs suivantes : entrée, plat, dessert."),
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -44,7 +51,7 @@ const deleteRequestValidator = [
     .withMessage("Id est obligatoire!")
     .bail()
     .custom(async (value) => {
-      const result = await RecetteService.getRecipeById(value);
+      const result = await RecetteService.getRecetteById(value);
       if (result === 0) {
         throw new Error("Cette recette n'existe pas!");
       }

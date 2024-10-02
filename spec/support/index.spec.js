@@ -4,21 +4,22 @@ describe("Recipe tests", () => {
   let recipeId = null;
 
   it("can be create", async () => {
-    const recipe = { titre: "bon", type: "dessert", ingredient: "farime" };
+    const recipe = { titre: "bon", type: "dessert", ingredients: "farime" };
     const result = await RecetteService.createRecette(
       recipe.titre,
       recipe.type,
-      recipe.ingredient,
+      recipe.ingredients,
     );
+    expect(result);
   });
 
   it("can be update", async () => {
-    const recipe = { titre: "bah", type: "test", ingredient: "challenge" };
+    const recipe = { titre: "bah", type: "test", ingredients: "challenge" };
     const result = await RecetteService.updateRecette(
       1,
       recipe.titre,
       recipe.type,
-      recipe.ingredient,
+      recipe.ingredients,
     );
     recipeId = result.insertId;
     const recipeCreated = await RecetteService.getRecetteById(1);
@@ -28,11 +29,11 @@ describe("Recipe tests", () => {
 
   it("can not be create", async () => {
     try {
-      const recipe = { titre: null, type: "dessert", ingredient: "farime" };
+      const recipe = { titre: null, type: "dessert", ingredients: "farime" };
       const result = await RecetteService.createRecette(
         recipe.titre,
         recipe.type,
-        recipe.ingredient,
+        recipe.ingredients,
       );
       recipeId = result.insertId;
       const recipeCreated = await RecetteService.getRecetteById(recipeId);
@@ -54,10 +55,4 @@ describe("Recipe tests", () => {
     const deleted = await RecetteService.deleteRecette(25);
     expect(deleted).not.toBeNull();
   });
-
-  //   it("adds 1 + 2 to equal 3", () => {
-  //     const recipe = { id: 1, title: "test" };
-  //     const result = { id: 1, title: "test" };
-  //     expect(recipe).toEqual(result);
-  //   });
 });
