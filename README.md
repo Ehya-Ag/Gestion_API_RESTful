@@ -153,7 +153,7 @@ npm run format
 
 # Docker
 
-## Construction de l'image Docker
+## Construction et lancement de l'image Docker
 
 - Pour construire l'image Docker, exécutez :
 
@@ -161,13 +161,6 @@ npm run format
 docker-compose up --build
 ```
 
-## Lancement du conteneur Docker
-
-Pour lancer le conteneur :
-
-```
-docker-compose up
-```
 
 L'API sera accessible à http://localhost:3000.
 
