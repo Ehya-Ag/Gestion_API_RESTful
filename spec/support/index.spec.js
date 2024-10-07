@@ -14,7 +14,7 @@ describe("Recipe tests", () => {
   });
 
   it("can be update", async () => {
-    const recipe = { titre: "bah", type: "test", ingredients: "challenge" };
+    const recipe = { titre: "tester", type: "plat", ingredients: "test, test" };
     const result = await RecetteService.updateRecette(
       1,
       recipe.titre,

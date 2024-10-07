@@ -25,9 +25,9 @@ DROP TABLE IF EXISTS `recettes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `recettes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titre` varchar(100) NOT NULL,
-  `ingredients` varchar(100) NOT NULL,
-  `type` text NOT NULL,
+  `titre` varchar(100) UNIQUE NOT NULL,
+  `ingredients` varchar NOT NULL,
+  `type` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `titre` (`titre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

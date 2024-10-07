@@ -3,27 +3,24 @@ version: "3.8"
 services:
   db:
     image: mysql:latest
+    env_file: .env
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
-    volumes:
-      - db-data:/var/lib/mysql
     ports:
       - "3307:3306"
 
   app:
-    build:
-      context: .
-    volumes:
-      - .:/index
+    env_file: .env
+    build: .
     environment:
       DB_HOST: db
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_DATABASE: ${DB_DATABASE}
-      DB_PORT: ${DB_PORT}
     ports:
-      - "3000:3000"
+      - "3005:3000"
     depends_on:
       - db
 
